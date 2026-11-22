@@ -1,17 +1,18 @@
 using System;
+using System.Threading.Tasks;
 using Godot;
 
 public partial class PlayerScript : Node3D
 {
     public override void _PhysicsProcess(double delta)
     {
-        if (_controlMode != ControlMode.Pulling)
+        if (_controlMode != ControlMode.Play)
         {
             HandleControlMode();
         }
         else
         {
-            HandlePull();
+            HandleCameraMovement();
         }
 
         if (_controlMode == ControlMode.Movement)
@@ -29,7 +30,7 @@ public partial class PlayerScript : Node3D
     }
 
     #region ControlMode
-    public enum ControlMode { Movement, DragAndDrop, Sewing, Pulling }
+    public enum ControlMode { Movement, DragAndDrop, Sewing, Play }
     private ControlMode _controlMode;
 
     private void HandleControlMode()
@@ -48,7 +49,8 @@ public partial class PlayerScript : Node3D
         }
         if (Input.IsActionJustPressed("pulling_mode"))
         {
-            _controlMode = ControlMode.Pulling;
+            _controlMode = ControlMode.Play;
+            PlayLevel();
         }
     }
     #endregion
@@ -82,13 +84,10 @@ public partial class PlayerScript : Node3D
         if (Input.IsActionPressed("rotate_down") && currentAngle <= 0.5f)
         {
             verticalRotationAngle = 1.0f;
-            GD.Print(currentAngle);
-
         }
         if (Input.IsActionPressed("rotate_up") && currentAngle >= -0.5f)
         {
             verticalRotationAngle = -1.0f;
-            GD.Print(currentAngle);
         }
         if (Input.IsActionJustReleased("move_in") && currentDepth >= minDepth)
         {
@@ -171,11 +170,11 @@ public partial class PlayerScript : Node3D
     {
         GetCameraVectors(out var origin, out var direction);
 
-        if (Input.IsActionJustReleased("move_in") && _dragDistance > 3f)
+        if (Input.IsActionJustReleased("move_out") && _dragDistance > 3f)
         {
             _dragDistance -= 1f;
         }
-        if (Input.IsActionJustReleased("move_out"))
+        if (Input.IsActionJustReleased("move_in"))
         {
             _dragDistance += 1f;
         }
@@ -285,23 +284,13 @@ public partial class PlayerScript : Node3D
 
     #endregion
 
-    #region Pulling
+    #region Play
 
-    private void HandlePull()
+    private void PlayLevel()
     {
-        foreach (var stitch in stitches)
-        {
-            var parent = stitch.GetParent<RigidBody3D>();
+        var level = GetTree().GetFirstNodeInGroup("level");
 
-            Vector3 force = (Vector3)stitch.Call("GetCurrentForce");
-
-            force = force.LimitLength(MaxForce);
-
-            parent.LockRotation = false;
-            parent.Sleeping = false;
-            parent.Freeze = false;
-            parent.ApplyForce(-force, stitch.Position);
-        }
+        level.Call("PlayLevel");
     }
 
     #endregion

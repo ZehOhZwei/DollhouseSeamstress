@@ -12,8 +12,10 @@ points = PackedVector3Array(-0.11508024, -0.09094334, 3.5810099, -0.08665013, -0
 [node name="Juice" type="RigidBody3D" unique_id=1614631390 groups=["draggable"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1575529525]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = ExtResource("1_ustu5")
 surface_material_override/0 = SubResource("StandardMaterial3D_8y0fe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=826539719]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_trhbi")

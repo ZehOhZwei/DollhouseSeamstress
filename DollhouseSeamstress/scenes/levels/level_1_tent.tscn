@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cwimg06gwwcaf"]
+
+[ext_resource type="Script" uid="uid://by1uifhvebjja" path="res://scripts/LevelScript.cs" id="1_4au1b"]
+[ext_resource type="PackedScene" uid="uid://ra47xtfw04di" path="res://scenes/card.tscn" id="1_hlkfm"]
+[ext_resource type="PackedScene" uid="uid://mv5w7cnfughw" path="res://scenes/geo.tscn" id="2_q2n4s"]
+[ext_resource type="Texture2D" uid="uid://bjb6yobfhrw32" path="res://resources/blueprint-textures.png" id="2_vwvwk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8qys"]
+size = Vector3(6.5307617, 1, 4.6083374)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yxle"]
+transparency = 1
+albedo_texture = ExtResource("2_vwvwk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_8x71y"]
+material = SubResource("StandardMaterial3D_6yxle")
+size = Vector3(6.531, 1, 4.608)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hlkfm"]
+points = PackedVector3Array(0.547, -3.605, 3.604, 0.547, 3.604, -3.605, -0.547, -3.605, 3.604, 0.547, -3.605, -3.605, -0.547, 3.604, -3.605, -0.547, -3.605, -3.605)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwvwk"]
+transparency = 1
+albedo_texture = ExtResource("2_vwvwk")
+
+[sub_resource type="PrismMesh" id="PrismMesh_g1v8u"]
+material = SubResource("StandardMaterial3D_vwvwk")
+
+[node name="Level 1 - Tent" type="Node3D" unique_id=70887351 node_paths=PackedStringArray("TargetAreas", "BuildingObjects") groups=["level"]]
+script = ExtResource("1_4au1b")
+TargetAreas = [NodePath("CardBlueprintShape"), NodePath("CardBlueprintShape2"), NodePath("GeoBlueprintShape3")]
+BuildingObjects = [NodePath("PlayingCard"), NodePath("PlayingCard2"), NodePath("Geo")]
+
+[node name="CardBlueprintShape" type="Area3D" parent="." unique_id=544872700]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -2.5, 1.8, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape" unique_id=882191921]
+shape = SubResource("BoxShape3D_c8qys")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape" unique_id=2061365843]
+mesh = SubResource("BoxMesh_8x71y")
+
+[node name="CardBlueprintShape2" type="Area3D" parent="." unique_id=1096802892]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0, 1, 2.5, 1.8, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape2" unique_id=2101071127]
+mesh = SubResource("BoxMesh_8x71y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape2" unique_id=266987137]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_c8qys")
+
+[node name="GeoBlueprintShape3" type="Area3D" parent="." unique_id=581947820]
+transform = Transform3D(-4.371139e-08, 0.70710677, -0.70710677, 0, -0.70710677, -0.70710677, -1, -3.090862e-08, 3.090862e-08, 0, -0.5, -2.3)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GeoBlueprintShape3" unique_id=1973913231]
+shape = SubResource("ConvexPolygonShape3D_hlkfm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GeoBlueprintShape3" unique_id=2004440532]
+transform = Transform3D(3.1217706e-07, 1.5608857e-07, -1.01, 7.1417785, -3.5708892, -1.0658141e-14, -7.1417785, -3.5708892, -4.4148507e-08, 0, -1.8066126, -1.8066126)
+mesh = SubResource("PrismMesh_g1v8u")
+
+[node name="Geo" parent="." unique_id=1050433792 instance=ExtResource("2_q2n4s")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="PlayingCard" parent="." unique_id=896129067 instance=ExtResource("1_hlkfm")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 6)
+
+[node name="PlayingCard2" parent="." unique_id=605424501 instance=ExtResource("1_hlkfm")]
+transform = Transform3D(-0.93301255, -0.35355332, 0.06698721, 0.026801646, 0.1173625, 0.9927274, -0.35884386, 0.9280227, -0.100024894, 3, 0, 4)
+
+[editable path="Geo"]
+[editable path="PlayingCard"]
+[editable path="PlayingCard2"]

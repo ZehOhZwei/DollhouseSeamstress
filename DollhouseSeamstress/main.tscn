@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://nk0ij0gu1hi6"]
 
-[ext_resource type="PackedScene" uid="uid://ra47xtfw04di" path="res://scenes/card.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://crtcswxytwnm5" path="res://resources/table_texture.png" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://cw03e52lmfqv" path="res://scripts/PlayerScript.cs" id="3_h2yge"]
 [ext_resource type="AudioStream" uid="uid://cwskr1xtsmy6f" path="res://sound/sewingsound.wav" id="4_lquwl"]
 [ext_resource type="AudioStream" uid="uid://bvk1gttg3ovp6" path="res://sound/freesound_community-slow-ethereal-sequencer-music-fragment-50247.mp3" id="5_7mycd"]
 [ext_resource type="FontFile" uid="uid://dcpnkjbi3mioq" path="res://fonts/HangingLetters-73pE.ttf" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://bfr1uml6buv1x" path="res://scenes/ui/titleScreen.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dd6x4avijcc11" path="res://scripts/GameControlScript.cs" id="5_lquwl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_c8qys"]
 height = 1.0
 radius = 25.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
-vertex_color_is_srgb = true
-albedo_color = Color(0.7812086, 0.18628517, 0.41657177, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_texture = ExtResource("1_1bvp3")
+grow_amount = 0.138
+point_size = 60.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_c8qys"]
-lightmap_size_hint = Vector2i(16, 56)
-material = SubResource("StandardMaterial3D_272bh")
-add_uv2 = true
-uv2_padding = 0.72
+material = SubResource("StandardMaterial3D_lquwl")
 height = 10.0
 
 [sub_resource type="Environment" id="Environment_b6raw"]
@@ -32,7 +32,6 @@ ssao_enabled = true
 ssil_enabled = true
 ssil_radius = 5.55
 ssil_intensity = 2.42
-sdfgi_enabled = true
 sdfgi_bounce_feedback = 0.23
 glow_enabled = true
 glow_normalized = true
@@ -57,11 +56,6 @@ shape = SubResource("CylinderShape3D_c8qys")
 transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("CylinderMesh_c8qys")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=82024391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.157215, 0)
-light_energy = 11.159
-omni_range = 100.0
-
 [node name="CameraPivotY" type="Node3D" parent="." unique_id=1602985621]
 
 [node name="CameraPivotX" type="Node3D" parent="CameraPivotY" unique_id=691381466]
@@ -78,27 +72,6 @@ Camera = NodePath("../CameraPivotY/CameraPivotX/Camera3D")
 DragForce = 70.0
 Damping = 20.0
 
-[node name="UI" type="Control" parent="." unique_id=1110560998]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="UI" unique_id=201104224]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 75.0
-offset_right = 326.0
-offset_bottom = 252.0
-theme_override_fonts/font = ExtResource("6_272bh")
-theme_override_font_sizes/font_size = 15
-text = "_________________
-Move Camera: press 1
-__________________________
-Drag and Drop Objects: press 2
-______________________
-Sew Objects: press 3"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=800365276]
 environment = SubResource("Environment_b6raw")
 
@@ -108,6 +81,7 @@ light_color = Color(0.310681, 0.54975355, 0.8954062, 1)
 light_energy = 3.315
 light_indirect_energy = 1.947
 light_volumetric_fog_energy = 1.526
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1075815855]
@@ -115,6 +89,7 @@ transform = Transform3D(-0.51607776, 0.5557173, 0.6517991, 0.74976784, -0.074840
 light_color = Color(0.89948106, 0.7845942, 0.9940241, 1)
 light_energy = 1.526
 light_volumetric_fog_energy = 1.526
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=2102551608]
@@ -122,7 +97,12 @@ transform = Transform3D(0.16872603, 0.9085572, -0.3821719, -0.19275217, 0.410658
 light_color = Color(0.45493317, 0.05663617, 0.65026516, 1)
 light_energy = 2.684
 light_volumetric_fog_energy = 1.526
+light_bake_mode = 1
 shadow_enabled = true
+sky_mode = 1
+
+[node name="GameControl" type="Node3D" parent="." unique_id=692900386]
+script = ExtResource("5_lquwl")
 
 [node name="PlayingCard" parent="." unique_id=896129067 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64404964, 3.489857, 0.252594)
@@ -133,3 +113,4 @@ stream = ExtResource("4_lquwl")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=649453586]
 stream = ExtResource("5_7mycd")
 autoplay = true
+[node name="TitleScreenUi" parent="." unique_id=2129154749 instance=ExtResource("4_1bvp3")]

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://lamfh31d3bkw"]
+
+[ext_resource type="Texture2D" uid="uid://bjb6yobfhrw32" path="res://resources/blueprint-textures.png" id="1_tjqx0"]
+[ext_resource type="PackedScene" uid="uid://vcvvrftqbem0" path="res://scenes/juice.tscn" id="2_5slal"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgf6b"]
+margin = 0.0
+size = Vector3(11, 1, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yxle"]
+transparency = 1
+albedo_texture = ExtResource("1_tjqx0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5slal"]
+material = SubResource("StandardMaterial3D_6yxle")
+size = Vector3(11, 1, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5slal"]
+size = Vector3(6.5307617, 1, 4.6083374)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgf6b"]
+material = SubResource("StandardMaterial3D_6yxle")
+size = Vector3(6.531, 1, 4.608)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5slal"]
+points = PackedVector3Array(0.547, -3.605, 3.604, 0.547, 3.604, -3.605, -0.547, -3.605, 3.604, 0.547, -3.605, -3.605, -0.547, 3.604, -3.605, -0.547, -3.605, -3.605)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgf6b"]
+transparency = 1
+albedo_texture = ExtResource("1_tjqx0")
+
+[sub_resource type="PrismMesh" id="PrismMesh_lk45t"]
+material = SubResource("StandardMaterial3D_sgf6b")
+
+[node name="Node3D" type="Node3D" unique_id=1911575599]
+
+[node name="JuiceBlueprintShape4" type="Area3D" parent="." unique_id=240219386]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 2.6339998, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JuiceBlueprintShape4" unique_id=348520378]
+shape = SubResource("BoxShape3D_sgf6b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="JuiceBlueprintShape4" unique_id=1475628454]
+transform = Transform3D(0.999993, 0, 0, 0, 1, 0, 0, 0, 0.999993, 0, 0, 0)
+mesh = SubResource("BoxMesh_5slal")
+
+[node name="CardBlueprintShape3" type="Area3D" parent="." unique_id=1627626158]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.3711385e-08, -0.9999998, 0, 0.99999994, -4.371138e-08, 0, 0, -3.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape3" unique_id=262994172]
+shape = SubResource("BoxShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape3" unique_id=1926271116]
+mesh = SubResource("BoxMesh_sgf6b")
+
+[node name="CardBlueprintShape2" type="Area3D" parent="." unique_id=127396526]
+transform = Transform3D(-4.3711385e-08, -0.9999999, 0, -4.3711385e-08, 1.9106853e-15, -0.99999994, 0.99999994, -4.3711385e-08, -4.3711385e-08, 3.4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape2" unique_id=552858050]
+shape = SubResource("BoxShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape2" unique_id=517361127]
+mesh = SubResource("BoxMesh_sgf6b")
+
+[node name="CardBlueprintShape" type="Area3D" parent="." unique_id=429505123]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, -4.3711385e-08, 1.9106853e-15, -1, 0.99999994, -4.3711385e-08, -4.371139e-08, -3.4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape" unique_id=399069771]
+shape = SubResource("BoxShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape" unique_id=1216102966]
+mesh = SubResource("BoxMesh_sgf6b")
+
+[node name="CardBlueprintShape5" type="Area3D" parent="." unique_id=1033860265]
+transform = Transform3D(-4.3711385e-08, 0.7071067, 0.7071067, 0, 0.7071067, -0.7071067, -0.99999994, -3.0908616e-08, -3.0908616e-08, 2, 5.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape5" unique_id=1243516269]
+shape = SubResource("BoxShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape5" unique_id=1979434004]
+mesh = SubResource("BoxMesh_sgf6b")
+
+[node name="CardBlueprintShape6" type="Area3D" parent="." unique_id=1152130771]
+transform = Transform3D(-4.371138e-08, -0.70710665, 0.70710665, 0, 0.70710665, 0.70710665, -0.9999998, 3.0908613e-08, -3.0908613e-08, -2, 5.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape6" unique_id=1474935831]
+shape = SubResource("BoxShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CardBlueprintShape6" unique_id=1001970816]
+mesh = SubResource("BoxMesh_sgf6b")
+
+[node name="Juice" parent="." unique_id=1614631390 instance=ExtResource("2_5slal")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.872188, 2.4438162, 0.5710101)
+visible = false
+
+[node name="GeoBlueprintShape3" type="Area3D" parent="." unique_id=2110895736]
+transform = Transform3D(-1.810585e-08, 0.7071067, -0.7071067, 6.181723e-08, -0.7071067, -0.7071067, -0.9999999, -5.6514153e-08, -3.0908616e-08, 0, 3.126251, -3.083)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GeoBlueprintShape3" unique_id=417808194]
+shape = SubResource("ConvexPolygonShape3D_5slal")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GeoBlueprintShape3" unique_id=1746110237]
+transform = Transform3D(3.1217706e-07, 1.5608857e-07, -1.01, 7.1417785, -3.5708892, -1.0658141e-14, -7.1417785, -3.5708892, -4.4148507e-08, 0, -1.8066126, -1.8066126)
+mesh = SubResource("PrismMesh_lk45t")

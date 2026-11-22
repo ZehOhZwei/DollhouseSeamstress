@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://cu3ji48q6vlee"]
+
+[ext_resource type="PackedScene" uid="uid://ra47xtfw04di" path="res://scenes/card.tscn" id="1_0qepi"]
+[ext_resource type="PackedScene" uid="uid://mv5w7cnfughw" path="res://scenes/geo.tscn" id="2_fmg3e"]
+[ext_resource type="PackedScene" uid="uid://vcvvrftqbem0" path="res://scenes/juice.tscn" id="3_ftfob"]
+[ext_resource type="PackedScene" uid="uid://kjmwff4g420g" path="res://scenes/match.tscn" id="4_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://b6euk1v4gng37" path="res://scenes/card_1.tscn" id="5_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://cil6rb0ngyo2e" path="res://scenes/cheese.tscn" id="6_pimnq"]
+[ext_resource type="PackedScene" uid="uid://bj5fkqjlkcwwc" path="res://scenes/comb.tscn" id="7_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://c838v57jaw37m" path="res://scenes/lolly.tscn" id="8_n6eey"]
+
+[node name="Node3D" type="Node3D" unique_id=610574475]
+
+[node name="Juice3" parent="." unique_id=584563290 instance=ExtResource("3_ftfob")]
+transform = Transform3D(0.067686625, -0.057292297, -0.9960622, 0.9967224, -0.040499963, 0.07006097, -0.044354342, -0.9975376, 0.054363094, 21.131409, 5.1429343, 16.430298)
+
+[node name="Juice2" parent="." unique_id=369212230 instance=ExtResource("3_ftfob")]
+transform = Transform3D(0.034196578, -0.022648033, -0.9991594, 0.99895185, -0.029698797, 0.034862645, -0.03046337, -0.9993033, 0.02160868, 13.206441, 5.1137075, 16.693306)
+
+[node name="Geo" parent="." unique_id=1050433792 instance=ExtResource("2_fmg3e")]
+transform = Transform3D(0.0032932262, -0.9999946, 0, 0.9999946, 0.0032932262, 0, 0, 0, 1, 21.827534, 10.839248, 10.450617)
+
+[node name="Geo2" parent="." unique_id=1521337168 instance=ExtResource("2_fmg3e")]
+transform = Transform3D(-0.0032933564, 0.9998738, -0.015516897, 0.9999947, 0.0032932553, -3.2116746e-05, 1.8988281e-05, -0.015516916, -0.99987966, 21.714123, 10.848001, 10.450106)
+
+[node name="Juice" parent="." unique_id=1614631390 instance=ExtResource("3_ftfob")]
+transform = Transform3D(0.00020581146, 0.011636458, -0.99993217, 0.99984366, -0.01768401, 0, -0.017682811, -0.99977595, -0.011638269, 5.283, 4.807, 16.689)
+
+[node name="RigidBody3D3" parent="." unique_id=1714578341 instance=ExtResource("4_fkk1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.442478, 6.012417, 8.346907)
+
+[node name="RigidBody3D" parent="." unique_id=1510542859 instance=ExtResource("4_fkk1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.876001, 6.893058, 17.404531)
+
+[node name="RigidBody3D4" parent="." unique_id=1568738606 instance=ExtResource("4_fkk1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.821136, 6.886427, 16.998077)
+
+[node name="RigidBody3D2" parent="." unique_id=1260666790 instance=ExtResource("4_fkk1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.051493, 6.201025, 8.753361)
+
+[node name="Card1" parent="." unique_id=1771497500 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.606785, 1.7956729, 17.345915)
+
+[node name="Card3" parent="." unique_id=1600796476 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.392128, 3.5913458, 19.430096)
+
+[node name="Card4" parent="." unique_id=1878485831 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2083092, 3.4770865, 14.493465)
+
+[node name="Card5" parent="." unique_id=1736487258 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1655998, 3.3628273, 9.715992)
+
+[node name="Card2" parent="." unique_id=1742502524 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.422966, 1.6814137, 12.409285)
+
+[node name="Card6" parent="." unique_id=1446680538 instance=ExtResource("5_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.380257, 1.5671544, 7.631811)
+
+[node name="Cheese" parent="." unique_id=497166187 instance=ExtResource("6_pimnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2334547, 8.511274, 10.548728)
+
+[node name="Comb" parent="." unique_id=1377582764 instance=ExtResource("7_2bnyt")]
+transform = Transform3D(-0.027096123, 0, 0.99963284, 0, 1, 0, -0.99963284, 0, -0.027096123, 8.377614, 6.142473, 17.879011)
+
+[node name="Comb2" parent="." unique_id=1465548072 instance=ExtResource("7_2bnyt")]
+transform = Transform3D(-0.013671823, 0, 0.9999066, 0, 1, 0, -0.9999066, 0, -0.013671823, 19.88423, 6.677519, 17.81364)
+
+[node name="Lolly" parent="." unique_id=632782617 instance=ExtResource("8_n6eey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6088047, 0, 21.360779)
+
+[node name="Lolly2" parent="." unique_id=581320453 instance=ExtResource("8_n6eey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.878958, 0, 21.360779)
+
+[node name="PlayingCard" parent="." unique_id=896129067 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5169954, 1.6911235, 19.383953)
+
+[node name="PlayingCard3" parent="." unique_id=1920658439 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5449953, 3.3821235, 6.4229527)
+
+[node name="PlayingCard4" parent="." unique_id=2036960824 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.851145, 3.4104137, 6.4454556)
+
+[node name="PlayingCard5" parent="." unique_id=1181828776 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.157294, 3.438704, 6.4679604)
+
+[node name="PlayingCard6" parent="." unique_id=385733915 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.463444, 3.4669943, 6.3467674)
+
+[node name="PlayingCard7" parent="." unique_id=466791055 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.769592, 3.4952846, 6.2734756)
+
+[node name="PlayingCard2" parent="." unique_id=948388825 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.823145, 1.7194138, 19.406456)
+
+[node name="PlayingCard8" parent="." unique_id=923416616 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25748, 1.747704, 19.42896)
+
+[node name="PlayingCard9" parent="." unique_id=1984677928 instance=ExtResource("1_0qepi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.56363, 1.7759943, 19.307768)
+
+[node name="Geo3" parent="." unique_id=235072442 instance=ExtResource("2_fmg3e")]
+transform = Transform3D(0.026435243, -0.99964917, -0.0013877461, -0.99965036, -0.02643527, 4.5474735e-13, -3.6685462e-05, 0.0013872616, -0.99999905, 22.211761, 11.283894, 14.985821)
+
+[node name="Geo4" parent="." unique_id=1317604334 instance=ExtResource("2_fmg3e")]
+transform = Transform3D(0.019849038, 0.9997928, -0.0044510085, -0.99980396, 0.01984777, -0.0003270006, -0.0002385897, 0.0044566365, 0.99999017, 22.122477, 11.259039, 15.022129)

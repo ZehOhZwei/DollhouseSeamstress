@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dnhcy4m4027q6"]
+
+[ext_resource type="FontFile" uid="uid://dcpnkjbi3mioq" path="res://fonts/HangingLetters-73pE.ttf" id="1_laypk"]
+
+[node name="UI" type="Control" unique_id=64971760]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=1268179133]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 75.0
+offset_right = 326.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("1_laypk")
+theme_override_font_sizes/font_size = 15
+text = "_________________
+Move Camera: press 1
+__________________________
+Drag and Drop Objects: press 2
+______________________
+Sew Objects: press 3
+______________________
+Start the level: press 4"

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b6euk1v4gng37"]
+
+[ext_resource type="ArrayMesh" uid="uid://i5qclfuu6ooa" path="res://objects/card1.obj" id="1_nw1db"]
+[ext_resource type="Texture2D" uid="uid://bikjjynwrr7hn" path="res://resources/card1-material.png" id="2_wqpsa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xl6b1"]
+albedo_texture = ExtResource("2_wqpsa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nw1db"]
+size = Vector3(0.269648, 3.905356, 2.991473)
+
+[node name="Card1" type="RigidBody3D" unique_id=1771497500]
+
+[node name="Card1" type="MeshInstance3D" parent="." unique_id=603298553]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, -3.1823864, 0)
+mesh = ExtResource("1_nw1db")
+surface_material_override/0 = SubResource("StandardMaterial3D_xl6b1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1512329835]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0.11659038, 0.052619934, -0.00017681123)
+shape = SubResource("BoxShape3D_nw1db")

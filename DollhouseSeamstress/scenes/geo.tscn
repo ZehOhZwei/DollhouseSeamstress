@@ -9,7 +9,7 @@ albedo_texture = ExtResource("2_twho0")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_twho0"]
 points = PackedVector3Array(0.04672, -3.104861, 3.1042535, 0.04672, 3.1042535, -3.104861, -0.04672, -3.104861, 3.1042535, 0.04672, -3.104861, -3.104861, -0.04672, 3.1042535, -3.104861, -0.04672, -3.104861, -3.104861)
 
-[node name="Geo" type="RigidBody3D" unique_id=1050433792 groups=["draggable"]]
+[node name="Geo" type="RigidBody3D" unique_id=1050433792 groups=["buildingPiece", "draggable"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=441305429]
 mesh = ExtResource("1_xub4k")

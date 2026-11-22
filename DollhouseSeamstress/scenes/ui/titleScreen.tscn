@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bfr1uml6buv1x"]
 
-[ext_resource type="FontFile" uid="uid://bjbw03a48nvny" path="res://fonts/Vailery-BLL7l.ttf" id="1_fyqef"]
+[ext_resource type="FontFile" uid="uid://bjbw03a48nvny" path="res://fonts/Vailery-BLL7l.ttf" id="1_3mp6o"]
 
 [sub_resource type="Theme" id="Theme_m6e0p"]
 
-[node name="UI" type="Control" unique_id=2129154749]
+[node name="TitleScreenUi" type="Control" unique_id=2129154749]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -21,19 +21,20 @@ offset_right = 851.2
 offset_bottom = 251.08
 theme_override_font_sizes/normal_font_size = 119
 bbcode_enabled = true
-text = "[color=magenta][wave][font=res://fonts/HangingLetters-73pE.ttf ] Dollhouse♡ Seamstress
+text = "[color=white][wave][font=res://fonts/HangingLetters-73pE.ttf ] Dollhouse♡ Seamstress
 "
 tab_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1001653582]
-points = PackedVector2Array(774, 0, 774, 66)
+points = PackedVector2Array(796, 0, 796, 29, 796, 64)
 width = 2.71
-default_color = Color(1, 0.18039216, 1, 1)
 
 [node name="Line2D" type="Line2D" parent="Line2D" unique_id=79821216]
-points = PackedVector2Array(773, 114, 773, 132)
+position = Vector2(-2, 0)
+points = PackedVector2Array(804, 111, 804, 135)
 width = 1.67
-default_color = Color(1, 0.18039216, 1, 1)
 
 [node name="Button" type="Button" parent="." unique_id=1466140100]
 self_modulate = Color(0.9577659, 0.9115812, 0.9783451, 1)
@@ -57,11 +58,11 @@ offset_top = 280.0
 offset_right = 857.0
 offset_bottom = 430.0
 theme = SubResource("Theme_m6e0p")
-theme_override_colors/font_color = Color(1, 0.28627452, 1, 1)
-theme_override_fonts/font = ExtResource("1_fyqef")
+theme_override_colors/font_color = Color(0.5568628, 0.73333335, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("1_3mp6o")
 theme_override_font_sizes/font_size = 29
 text = "Please!
-can u helop me build a doolhouse? 
+can u help me build a dollhouse? 
 Mommy left me this needle and thread! 
-Maybe we can sew theese Objects together!"
+Maybe we can sew theese objects together!"
 horizontal_alignment = 1

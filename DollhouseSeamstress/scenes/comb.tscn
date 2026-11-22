@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bj5fkqjlkcwwc"]
+
+[ext_resource type="ArrayMesh" uid="uid://sidd4cab75wc" path="res://objects/comb.obj" id="1_4we4o"]
+[ext_resource type="Texture2D" uid="uid://d2et1055cbn6w" path="res://resources/comb_material.png" id="2_rwsrp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evi5y"]
+albedo_texture = ExtResource("2_rwsrp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vvt4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwsrp"]
+size = Vector3(0.493886, 2.5942578, 11.285705)
+
+[node name="Comb" type="RigidBody3D" unique_id=1377582764]
+
+[node name="Comb" type="MeshInstance3D" parent="." unique_id=543269806]
+mesh = ExtResource("1_4we4o")
+surface_material_override/0 = SubResource("StandardMaterial3D_evi5y")
+surface_material_override/1 = SubResource("StandardMaterial3D_7vvt4")
+surface_material_override/2 = SubResource("StandardMaterial3D_7vvt4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1855878615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69361794, -0.00046348572)
+shape = SubResource("BoxShape3D_rwsrp")
