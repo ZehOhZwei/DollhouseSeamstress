@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cwskr1xtsmy6f" path="res://sound/sewingsound.wav" id="4_lquwl"]
 [ext_resource type="AudioStream" uid="uid://bvk1gttg3ovp6" path="res://sound/freesound_community-slow-ethereal-sequencer-music-fragment-50247.mp3" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dd6x4avijcc11" path="res://scripts/GameControlScript.cs" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://e0lf057y6en1" path="res://scenes/ui/titleScreen.tscn" id="7_5vw27"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_c8qys"]
 height = 1.0
@@ -50,9 +51,9 @@ fog_height_density = 4.8219
 [node name="GameControl" type="Node3D" parent="." unique_id=692900386 node_paths=PackedStringArray("TitleScreen", "InGameUi", "ResultScreen", "EndScreen", "Player")]
 script = ExtResource("5_lquwl")
 TitleScreen = NodePath("../UI/TitleScreenUi")
-InGameUi = NodePath("../UI/InGameUi")
-ResultScreen = NodePath("../UI/ResultScreen")
-EndScreen = NodePath("../UI/EndScreen")
+InGameUi = NodePath("../UI/InGame")
+ResultScreen = NodePath("../UI/Result")
+EndScreen = NodePath("../UI/Control")
 Player = NodePath("../Player")
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=1125217831]
@@ -76,11 +77,11 @@ fov = 45.0
 [node name="Player" type="Node3D" parent="." unique_id=619369639 node_paths=PackedStringArray("CameraPivotX", "CameraPivotY", "Camera", "pickup")]
 script = ExtResource("3_h2yge")
 rotationSpeed = 0.02
-DragForce = 70.0
-Damping = 20.0
 CameraPivotX = NodePath("../CameraPivotY/CameraPivotX")
 CameraPivotY = NodePath("../CameraPivotY")
 Camera = NodePath("../CameraPivotY/CameraPivotX/Camera3D")
+DragForce = 70.0
+Damping = 20.0
 pickup = NodePath("../Pickup")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=800365276]
@@ -126,48 +127,33 @@ offset_bottom = 40.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="TitleScreenUi" parent="UI" unique_id=2129154749 instance=ExtResource("4_1bvp3")]
+[node name="TitleScreenUi" parent="UI" unique_id=2129154749 instance=ExtResource("7_5vw27")]
 layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 1157.0
+offset_bottom = 647.0
 
-[node name="InGameUi" parent="UI" unique_id=64971760 instance=ExtResource("3_272bh")]
+[node name="InGame" parent="UI" unique_id=64971760 instance=ExtResource("3_272bh")]
 visible = false
 layout_mode = 0
 
-[node name="ResultScreen" type="Control" parent="UI" unique_id=1501101804]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Score" type="Label" parent="UI/ResultScreen" unique_id=436625560]
-layout_mode = 0
-offset_left = 481.0
-offset_top = 173.0
-offset_right = 671.0
-offset_bottom = 222.0
-text = "Score
-"
-
-[node name="RestartButton" type="Button" parent="UI/ResultScreen" unique_id=366679221]
+[node name="Result" parent="UI" unique_id=1971318534 instance=ExtResource("4_1bvp3")]
 visible = false
 layout_mode = 0
-offset_left = 483.0
-offset_top = 249.0
-offset_right = 671.0
-offset_bottom = 338.0
-text = "Restart"
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1153.0
+offset_bottom = 650.0
 
-[node name="NextButton" type="Button" parent="UI/ResultScreen" unique_id=1071208610]
-visible = false
-layout_mode = 0
-offset_left = 480.0
-offset_top = 247.0
-offset_right = 675.0
-offset_bottom = 336.0
-text = "Next"
-
-[node name="EndScreen" type="Control" parent="UI" unique_id=502563515]
+[node name="Control" type="Control" parent="UI" unique_id=967299883]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Control" unique_id=886766938]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "End#"

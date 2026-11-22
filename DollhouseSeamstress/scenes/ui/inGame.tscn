@@ -11,7 +11,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Start" type="Node" parent="." unique_id=1156449788]
+[node name="Start" type="Control" parent="." unique_id=2136660008]
+anchors_preset = 0
 
 [node name="Img9843" type="Sprite2D" parent="Start" unique_id=967003968]
 position = Vector2(276, 141.00003)
@@ -29,6 +30,7 @@ scale = Vector2(0.02617128, 0.030029291)
 texture = ExtResource("3_gud0n")
 
 [node name="Label" type="Label" parent="Start" unique_id=1268179133]
+layout_mode = 0
 offset_top = 64.0
 offset_right = 366.0
 offset_bottom = 278.0
@@ -43,9 +45,12 @@ ______________________
 ______________________
      Beginn Stitching: press 4"
 
-[node name="Kamera" type="Node" parent="." unique_id=329785096]
+[node name="Kamera" type="Control" parent="." unique_id=1898481080]
+visible = false
+anchors_preset = 0
 
 [node name="Label2" type="Label" parent="Kamera" unique_id=648280484]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 371.0
 offset_right = 189.0
@@ -64,21 +69,21 @@ __________________
     Scroll: Mouswheel"
 
 [node name="Img9842" type="Sprite2D" parent="Kamera" unique_id=1001563563]
-visible = false
 position = Vector2(89.99999, 399.99997)
 scale = Vector2(0.068603516, 0.068603516)
 texture = ExtResource("2_q6qp3")
 
-[node name="Bewegen" type="Node" parent="." unique_id=666152893]
+[node name="Bewegen" type="Control" parent="." unique_id=405911773]
+visible = false
+anchors_preset = 0
 
 [node name="Img9843" type="Sprite2D" parent="Bewegen" unique_id=847836723]
-visible = false
 position = Vector2(78, 385.00003)
 scale = Vector2(0.06024169, 0.06024169)
 texture = ExtResource("1_qx8us")
 
 [node name="Label2" type="Label" parent="Bewegen" unique_id=1295548191]
-visible = false
+layout_mode = 0
 offset_left = 2.0
 offset_top = 421.0
 offset_right = 4902.0
@@ -93,16 +98,17 @@ ____________________________
    		 Zoom : Mousewheel
 "
 
-[node name="Nähen" type="Node" parent="." unique_id=1142668357]
+[node name="Nähen" type="Control" parent="." unique_id=319057904]
+visible = false
+anchors_preset = 0
 
 [node name="Img9859" type="Sprite2D" parent="Nähen" unique_id=1772677094]
-visible = false
 position = Vector2(73.999985, 388.99997)
 scale = Vector2(0.04711914, 0.04711914)
 texture = ExtResource("3_gud0n")
 
 [node name="Label" type="Label" parent="Nähen" unique_id=186266275]
-visible = false
+layout_mode = 0
 offset_top = 421.0
 offset_right = 366.0
 offset_bottom = 635.0
@@ -113,5 +119,3 @@ text = "_________________________
 _________________________
       Remove mark : Rightclick
 "
-
-[node name="Faden" type="Node" parent="." unique_id=1836558247]

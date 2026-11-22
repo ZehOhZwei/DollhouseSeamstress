@@ -16,8 +16,6 @@ public partial class GameControlScript : Node3D
     private int currentLevelIdx = 0;
     public List<string> LevelPaths = [
         "res://scenes/levels/level_1_tent.tscn",
-        "res://scenes/levels/level_2_house.tscn",
-        "res://scenes/levels/level_3_villa.tscn"
         ];
 
     public override void _Ready()
@@ -25,6 +23,12 @@ public partial class GameControlScript : Node3D
         var startButton = GetNode<Button>("../UI/TitleScreenUi/StartGameButton");
         _gameState = GameState.TitleScreen;
         startButton.ButtonDown += () => { NextLevel(0); };
+
+        var nextButton = ResultScreen.GetNode<Button>("NextButton");
+        var restartButton = ResultScreen.GetNode<Button>("RestartButton");
+
+        nextButton.ButtonDown += () => { StartNextLevel(); };
+        restartButton.ButtonDown += () => { RestartLevel(); };
     }
 
     public void NextLevel(int idx)
@@ -42,7 +46,7 @@ public partial class GameControlScript : Node3D
         InGameUi.Visible = true;
         _gameState = GameState.InGame;
 
-        if (idx < LevelPaths.Count - 1)
+        if (idx < LevelPaths.Count)
         {
             var levelScene = ResourceLoader.Load<PackedScene>(LevelPaths[idx]);
             var level = levelScene.Instantiate();
@@ -51,10 +55,7 @@ public partial class GameControlScript : Node3D
         }
         else
         {
-            TitleScreen.Visible = false;
-            ResultScreen.Visible = false;
-            EndScreen.Visible = true;
-            InGameUi.Visible = false;
+            ShowEndScreen();
         }
     }
 
@@ -70,7 +71,10 @@ public partial class GameControlScript : Node3D
     public void PlayLevel()
     {
         _gameState = GameState.Playing;
-
+        TitleScreen.Visible = false;
+        ResultScreen.Visible = false;
+        EndScreen.Visible = false;
+        InGameUi.Visible = false;
 
         currentLevel.Call("PlayLevel");
 
@@ -96,28 +100,38 @@ public partial class GameControlScript : Node3D
         var nextButton = ResultScreen.GetNode<Button>("NextButton");
         var restartButton = ResultScreen.GetNode<Button>("RestartButton");
 
-        ResultScreen.GetNode<Label>("Score").Text = $"Score: {(int)score}%";
+        ResultScreen.GetNode<Label>("Score").Text = $"{(int)score}%";
 
-        if (score > 50f)
+        if (score > 10f)
         {
             nextButton.Visible = true;
             restartButton.Visible = false;
 
-            nextButton.ButtonDown += () => { NextLevel(currentLevelIdx + 1); };
         }
         else
         {
             nextButton.Visible = false;
             restartButton.Visible = true;
 
-            restartButton.ButtonDown += () => { RestartLevel(); };
         }
 
     }
 
+    public void StartNextLevel()
+    {
+        NextLevel(currentLevelIdx + 1);
+    }
 
     public void RestartLevel()
     {
         NextLevel(currentLevelIdx);
+    }
+
+    public void ShowEndScreen()
+    {
+        TitleScreen.Visible = false;
+        ResultScreen.Visible = false;
+        EndScreen.Visible = true;
+        InGameUi.Visible = false;
     }
 }
