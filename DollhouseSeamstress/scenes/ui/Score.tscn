@@ -14,8 +14,8 @@ offset_right = 1137.0
 offset_bottom = 652.0
 
 [node name="TableTexture" type="Sprite2D" parent="." unique_id=319138480]
-position = Vector2(671.125, 353.07632)
-scale = Vector2(0.6854248, 0.5818617)
+position = Vector2(604.49994, 339.5)
+scale = Vector2(0.9291993, 0.72021484)
 texture = ExtResource("1_1mknw")
 
 [node name="Img9857" type="Sprite2D" parent="." unique_id=1966983214]

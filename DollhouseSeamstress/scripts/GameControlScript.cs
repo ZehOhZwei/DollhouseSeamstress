@@ -16,6 +16,7 @@ public partial class GameControlScript : Node3D
     private int currentLevelIdx = 0;
     public List<string> LevelPaths = [
         "res://scenes/levels/level_1_tent.tscn",
+        "res://scenes/levels/level_2_house.tscn",
         ];
 
     public override void _Ready()

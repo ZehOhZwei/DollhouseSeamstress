@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bvk1gttg3ovp6" path="res://sound/freesound_community-slow-ethereal-sequencer-music-fragment-50247.mp3" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dd6x4avijcc11" path="res://scripts/GameControlScript.cs" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://e0lf057y6en1" path="res://scenes/ui/titleScreen.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b0l816k38wna1" path="res://scenes/ui/EndScreen.tscn" id="9_kek77"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_c8qys"]
 height = 1.0
@@ -53,7 +54,7 @@ script = ExtResource("5_lquwl")
 TitleScreen = NodePath("../UI/TitleScreenUi")
 InGameUi = NodePath("../UI/InGame")
 ResultScreen = NodePath("../UI/Result")
-EndScreen = NodePath("../UI/Control")
+EndScreen = NodePath("../UI/EndScreen")
 Player = NodePath("../Player")
 
 [node name="Table" type="StaticBody3D" parent="." unique_id=1125217831]
@@ -118,6 +119,7 @@ stream = ExtResource("4_lquwl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=649453586]
 stream = ExtResource("5_7mycd")
+autoplay = true
 
 [node name="UI" type="Control" parent="." unique_id=1824488389]
 layout_mode = 3
@@ -146,14 +148,10 @@ offset_top = 0.0
 offset_right = 1153.0
 offset_bottom = 650.0
 
-[node name="Control" type="Control" parent="UI" unique_id=967299883]
+[node name="EndScreen" parent="UI" unique_id=1346366813 instance=ExtResource("9_kek77")]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="UI/Control" unique_id=886766938]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "End#"
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1153.0
+offset_bottom = 650.0

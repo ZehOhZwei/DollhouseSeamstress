@@ -19,7 +19,7 @@ points = PackedVector3Array(-2.231196, -0.00015878677, -0.00043678284, -2.212413
 
 [node name="Lolly" type="RigidBody3D" unique_id=632782617]
 
-[node name="Loli" type="MeshInstance3D" parent="." unique_id=2125265465]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2125265465]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = ExtResource("1_8vkm6")
 surface_material_override/0 = SubResource("StandardMaterial3D_ytuob")

@@ -11,7 +11,7 @@ points = PackedVector3Array(-3.34523, -3.090929, 0.86159897, -3.3439198, -3.2046
 
 [node name="Cheese" type="RigidBody3D" unique_id=497166187]
 
-[node name="Cheese" type="MeshInstance3D" parent="." unique_id=1906847959]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1906847959]
 transform = Transform3D(1, 0, 0, 0, 0.91433764, -0.40495268, 0, 0.40495268, 0.91433764, 0, 0, 3.3830147)
 mesh = ExtResource("1_gv6i6")
 surface_material_override/0 = SubResource("StandardMaterial3D_kvjqq")

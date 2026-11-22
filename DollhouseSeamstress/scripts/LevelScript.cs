@@ -55,6 +55,8 @@ public partial class LevelScript : Node3D
         }
 
         stitches = GetTree().GetNodesInGroup("stitch");
+
+        playing = true;
     }
 
     public void StopLevel()
@@ -65,6 +67,9 @@ public partial class LevelScript : Node3D
             buildingObject.Sleeping = true;
             buildingObject.LockRotation = true;
         }
+
+        playing = false;
+
     }
 
     public float GetLevelScore()

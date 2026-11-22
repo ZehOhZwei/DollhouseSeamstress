@@ -176,6 +176,7 @@ public partial class PlayerScript : Node3D
 
     private void DropObject()
     {
+        _draggedBody.LockRotation = false;
         _draggedBody = null;
     }
 

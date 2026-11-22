@@ -11,7 +11,7 @@ size = Vector3(0.269648, 3.905356, 2.991473)
 
 [node name="Card1" type="RigidBody3D" unique_id=1771497500]
 
-[node name="Card1" type="MeshInstance3D" parent="." unique_id=603298553]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=603298553]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, -3.1823864, 0)
 mesh = ExtResource("1_nw1db")
 surface_material_override/0 = SubResource("StandardMaterial3D_xl6b1")
