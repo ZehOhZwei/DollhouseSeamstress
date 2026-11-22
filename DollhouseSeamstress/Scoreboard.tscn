@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://xr5q88anua7w"]
+
+[ext_resource type="Texture2D" uid="uid://crtcswxytwnm5" path="res://resources/table_texture.png" id="1_0ya6e"]
+[ext_resource type="Texture2D" uid="uid://cprkyoceldg5i" path="res://resources/IMG_9857.png" id="2_5jfn8"]
+
+[node name="TableTexture" type="Sprite2D" unique_id=23385688]
+position = Vector2(555, 348)
+scale = Vector2(0.59960943, 0.5810547)
+texture = ExtResource("1_0ya6e")
+
+[node name="Img9857" type="Sprite2D" parent="." unique_id=147918459]
+position = Vector2(-3.3354988, 60.235317)
+scale = Vector2(0.3363192, 0.3316759)
+texture = ExtResource("2_5jfn8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=584456053]
+offset_left = -582.04553
+offset_top = -602.35297
+offset_right = 607.06177
+offset_bottom = -216.84714
+theme_override_font_sizes/normal_font_size = 230
+bbcode_enabled = true
+text = "[color=white][wave][font=res://fonts/HangingLetters-73pE.ttf ] Game Over
+
+"

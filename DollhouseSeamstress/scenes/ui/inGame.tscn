@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dnhcy4m4027q6"]
 
 [ext_resource type="FontFile" uid="uid://dcpnkjbi3mioq" path="res://fonts/HangingLetters-73pE.ttf" id="1_laypk"]
+[ext_resource type="Texture2D" uid="uid://8ybjiyd4bgvw" path="res://resources/IMG_9843.png" id="1_qx8us"]
+[ext_resource type="Texture2D" uid="uid://c888868x7d3r3" path="res://resources/IMG_9842.png" id="2_q6qp3"]
+[ext_resource type="Texture2D" uid="uid://bxgcyvat6ba1r" path="res://resources/IMG_9858.png" id="3_gud0n"]
 
 [node name="UI" type="Control" unique_id=64971760]
 layout_mode = 3
@@ -8,19 +11,107 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="." unique_id=1268179133]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 75.0
-offset_right = 326.0
-offset_bottom = 252.0
+[node name="Start" type="Node" parent="." unique_id=1156449788]
+
+[node name="Img9843" type="Sprite2D" parent="Start" unique_id=967003968]
+position = Vector2(276, 141.00003)
+scale = Vector2(0.024944833, 0.026032146)
+texture = ExtResource("1_qx8us")
+
+[node name="Img9842" type="Sprite2D" parent="Start" unique_id=1548458966]
+position = Vector2(223, 98)
+scale = Vector2(0.03979493, 0.03979493)
+texture = ExtResource("2_q6qp3")
+
+[node name="Img9858" type="Sprite2D" parent="Start" unique_id=2056169606]
+position = Vector2(232, 189)
+scale = Vector2(0.02617128, 0.030029291)
+texture = ExtResource("3_gud0n")
+
+[node name="Label" type="Label" parent="Start" unique_id=1268179133]
+offset_top = 64.0
+offset_right = 366.0
+offset_bottom = 278.0
 theme_override_fonts/font = ExtResource("1_laypk")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 18
+text = "_____________________
+       Move Camera: press 1
+___________________________
+    Drag and Drop Objects: press 2
+______________________
+            Sew Objects: press 3
+______________________
+     Beginn Stitching: press 4"
+
+[node name="Kamera" type="Node" parent="." unique_id=329785096]
+
+[node name="Label2" type="Label" parent="Kamera" unique_id=648280484]
+offset_left = 1.0
+offset_top = 371.0
+offset_right = 189.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("1_laypk")
+theme_override_font_sizes/font_size = 18
 text = "_________________
-Move Camera: press 1
-__________________________
-Drag and Drop Objects: press 2
-______________________
-Sew Objects: press 3
-______________________
-Start the level: press 4"
+     Up: press W
+___________________
+    Down: press S
+_________________
+   	 Left: press D
+__________________
+    Right: press A
+__________________
+    Scroll: Mouswheel"
+
+[node name="Img9842" type="Sprite2D" parent="Kamera" unique_id=1001563563]
+visible = false
+position = Vector2(89.99999, 399.99997)
+scale = Vector2(0.068603516, 0.068603516)
+texture = ExtResource("2_q6qp3")
+
+[node name="Bewegen" type="Node" parent="." unique_id=666152893]
+
+[node name="Img9843" type="Sprite2D" parent="Bewegen" unique_id=847836723]
+visible = false
+position = Vector2(78, 385.00003)
+scale = Vector2(0.06024169, 0.06024169)
+texture = ExtResource("1_qx8us")
+
+[node name="Label2" type="Label" parent="Bewegen" unique_id=1295548191]
+visible = false
+offset_left = 2.0
+offset_top = 421.0
+offset_right = 4902.0
+offset_bottom = 3001.0
+theme_override_fonts/font = ExtResource("1_laypk")
+theme_override_font_sizes/font_size = 19
+text = "_________________________
+  Take / Drop : Left click
+____________________________
+   		  Rotate : Q,W,E,A,S,D
+____________________________
+   		 Zoom : Mousewheel
+"
+
+[node name="Nähen" type="Node" parent="." unique_id=1142668357]
+
+[node name="Img9859" type="Sprite2D" parent="Nähen" unique_id=1772677094]
+visible = false
+position = Vector2(73.999985, 388.99997)
+scale = Vector2(0.04711914, 0.04711914)
+texture = ExtResource("3_gud0n")
+
+[node name="Label" type="Label" parent="Nähen" unique_id=186266275]
+visible = false
+offset_top = 421.0
+offset_right = 366.0
+offset_bottom = 635.0
+theme_override_fonts/font = ExtResource("1_laypk")
+theme_override_font_sizes/font_size = 18
+text = "_________________________
+    Mark where  to sew : Leftclick
+_________________________
+      Remove mark : Rightclick
+"
+
+[node name="Faden" type="Node" parent="." unique_id=1836558247]

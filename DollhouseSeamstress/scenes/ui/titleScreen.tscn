@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bfr1uml6buv1x"]
+[gd_scene format=3 uid="uid://e0lf057y6en1"]
 
 [ext_resource type="FontFile" uid="uid://bjbw03a48nvny" path="res://fonts/Vailery-BLL7l.ttf" id="1_3mp6o"]
 
@@ -58,7 +58,7 @@ offset_top = 280.0
 offset_right = 857.0
 offset_bottom = 430.0
 theme = SubResource("Theme_m6e0p")
-theme_override_colors/font_color = Color(0.5568628, 0.73333335, 0.9764706, 1)
+theme_override_colors/font_color = Color(0.99022764, 0.97295374, 0.69471705, 1)
 theme_override_fonts/font = ExtResource("1_3mp6o")
 theme_override_font_sizes/font_size = 29
 text = "Please!
