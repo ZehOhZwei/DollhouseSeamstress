@@ -6,6 +6,7 @@ public partial class GameControlScript : Node3D
 {
     public enum GameState { titleScreen, resultScreen, EndScreen, levelOne, levelTwo, levelThree }
 
+    [Export] public Control TitleScreen;
     public string TitleScreenPath = "res://scenes/levels/titleScreen";
     public string ResultScreenPath = "res://scenes/levels/levelResultScreen";
     public List<string> LevelPaths = [
@@ -19,9 +20,15 @@ public partial class GameControlScript : Node3D
 
     public override void _Ready()
     {
+        var startButton = GetNode<Button>("../TitleScreenUi/StartGameButton");
 
+        startButton.ButtonDown += OnStartButtonPressed;
     }
 
+    private void OnStartButtonPressed()
+    {
+        NextLevel(0);
+    }
 
     public void NextLevel(int idx)
     {

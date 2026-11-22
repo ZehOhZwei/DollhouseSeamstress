@@ -7,18 +7,18 @@
 [node name="TitleScreenUi" type="Control" unique_id=2129154749]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1153.0
+offset_bottom = 650.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1778915435]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.19500001
-anchor_bottom = 0.79800004
-offset_left = 265.0
-offset_top = -2.0
-offset_right = 851.2
-offset_bottom = 251.08
+anchor_right = 28.842001
+anchor_bottom = 16.197
+offset_left = 241.0
+offset_top = -1.0
+offset_right = -32371.828
+offset_bottom = -10242.051
 theme_override_font_sizes/normal_font_size = 119
 bbcode_enabled = true
 text = "[color=white][wave][font=res://fonts/HangingLetters-73pE.ttf ] Dollhouse♡ Seamstress
@@ -36,7 +36,7 @@ position = Vector2(-2, 0)
 points = PackedVector2Array(804, 111, 804, 135)
 width = 1.67
 
-[node name="Button" type="Button" parent="." unique_id=1466140100]
+[node name="StartGameButton" type="Button" parent="." unique_id=1466140100]
 self_modulate = Color(0.9577659, 0.9115812, 0.9783451, 1)
 layout_mode = 0
 offset_left = 456.0
