@@ -47,10 +47,9 @@ public partial class PlayerScript : Node3D
         {
             _controlMode = ControlMode.Sewing;
         }
-        if (Input.IsActionJustPressed("pulling_mode"))
+        if (Input.IsActionJustPressed("play_level"))
         {
-            _controlMode = ControlMode.Play;
-            PlayLevel();
+            _controlMode = ControlMode.Sewing;
         }
     }
     #endregion
@@ -116,6 +115,7 @@ public partial class PlayerScript : Node3D
     [Export] public float DragForce = 30.0f;
     [Export] public float Damping = 5.0f;
     [Export] public float MaxForce = 100.0f;
+    [Export] public AudioStreamPlayer3D pickup;
     private RigidBody3D _draggedBody;
     private float _dragDistance;
     private void HandleDragAndDrop()
@@ -131,6 +131,12 @@ public partial class PlayerScript : Node3D
                 DropObject();
             }
         }
+
+        if (Input.IsActionJustPressed("freeze") && _draggedBody != null)
+        {
+            FreezeObject();
+        }
+
 
         if (_draggedBody != null)
         {
@@ -153,6 +159,8 @@ public partial class PlayerScript : Node3D
 
         if (collider is RigidBody3D body && body.IsInGroup("draggable"))
         {
+            pickup.Play();
+
             _draggedBody = body;
             _draggedBody.Freeze = false;
             _draggedBody.LockRotation = true;
@@ -160,9 +168,14 @@ public partial class PlayerScript : Node3D
         }
     }
 
-    private void DropObject()
+    private void FreezeObject()
     {
         _draggedBody.Freeze = true;
+        _draggedBody = null;
+    }
+
+    private void DropObject()
+    {
         _draggedBody = null;
     }
 
@@ -280,17 +293,6 @@ public partial class PlayerScript : Node3D
             stitches.Add(stitch);
         }
 
-    }
-
-    #endregion
-
-    #region Play
-
-    private void PlayLevel()
-    {
-        var level = GetTree().GetFirstNodeInGroup("level");
-
-        level.Call("PlayLevel");
     }
 
     #endregion

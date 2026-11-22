@@ -55,19 +55,22 @@ public partial class LevelScript : Node3D
         }
 
         stitches = GetTree().GetNodesInGroup("stitch");
+    }
 
-
-
-        Task.Delay(10000);
-
-        var score = GetLevelScore();
-
-
-        GD.Print(score);
+    public void StopLevel()
+    {
+        foreach (var buildingObject in BuildingObjects)
+        {
+            buildingObject.Freeze = true;
+            buildingObject.Sleeping = true;
+            buildingObject.LockRotation = true;
+        }
     }
 
     public float GetLevelScore()
     {
+        StopLevel();
+
         var totalScore = 0f;
         foreach (var mesh in LevelMeshes)
         {

@@ -45,7 +45,7 @@ transform = Transform3D(0.999993, 0, 0, 0, 1, 0, 0, 0, 0.999993, 0, 0, 0)
 mesh = SubResource("BoxMesh_5slal")
 
 [node name="CardBlueprintShape3" type="Area3D" parent="." unique_id=1627626158]
-transform = Transform3D(0.9999999, 0, 0, 0, -4.3711385e-08, -0.9999998, 0, 0.99999994, -4.371138e-08, 0, 0, -3.4)
+transform = Transform3D(0.9999999, 0, 0, 0, -4.3711378e-08, -0.99999976, 0, 0.9999999, -4.3711374e-08, 0, 0, -3.4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CardBlueprintShape3" unique_id=262994172]
 shape = SubResource("BoxShape3D_5slal")
