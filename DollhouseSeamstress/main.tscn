@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crtcswxytwnm5" path="res://resources/table_texture.png" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dnhcy4m4027q6" path="res://scenes/ui/inGame.tscn" id="3_272bh"]
 [ext_resource type="Script" uid="uid://cw03e52lmfqv" path="res://scripts/PlayerScript.cs" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bfr1uml6buv1x" path="res://scenes/ui/titleScreen.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bfr1uml6buv1x" path="res://scenes/ui/Score.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://cwskr1xtsmy6f" path="res://sound/sewingsound.wav" id="4_lquwl"]
 [ext_resource type="AudioStream" uid="uid://bvk1gttg3ovp6" path="res://sound/freesound_community-slow-ethereal-sequencer-music-fragment-50247.mp3" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dd6x4avijcc11" path="res://scripts/GameControlScript.cs" id="5_lquwl"]
@@ -76,11 +76,11 @@ fov = 45.0
 [node name="Player" type="Node3D" parent="." unique_id=619369639 node_paths=PackedStringArray("CameraPivotX", "CameraPivotY", "Camera")]
 script = ExtResource("3_h2yge")
 rotationSpeed = 0.02
+DragForce = 70.0
+Damping = 20.0
 CameraPivotX = NodePath("../CameraPivotY/CameraPivotX")
 CameraPivotY = NodePath("../CameraPivotY")
 Camera = NodePath("../CameraPivotY/CameraPivotX/Camera3D")
-DragForce = 70.0
-Damping = 20.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=800365276]
 environment = SubResource("Environment_b6raw")
